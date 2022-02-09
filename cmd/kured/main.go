@@ -430,6 +430,7 @@ func drain(client *kubernetes.Clientset, node *v1.Node) {
 		ErrOut:                          os.Stderr,
 		Out:                             os.Stdout,
 		Timeout:                         drainTimeout,
+		PodSelector: 					 "--pod-selector='app!=csi-attacher,app!=csi-provisioner'",
 	}
 
 	if err := kubectldrain.RunCordonOrUncordon(drainer, node, true); err != nil {
