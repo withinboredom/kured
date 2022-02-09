@@ -32,8 +32,8 @@ jobs:
 
       - name: Build image
         run: |
-          make DH_ORG="${{ github.repository_owner }}" image
+          make DH_ORG="kured" image
 
       - name: Publish image
         run: |
-          make DH_ORG="${{ github.repository_owner }}" publish-image
+          make DH_ORG="kured" publish-image
